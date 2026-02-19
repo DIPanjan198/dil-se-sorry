@@ -242,14 +242,51 @@ button {
 
 /* ================= RESPONSIVE ================= */
 
+/* ================= MOBILE RESPONSIVE ================= */
+
 @media (max-width: 768px) {
+
+  .title {
+    font-size: 2rem;
+  }
+
   .typing {
-    width: 85%;
+    width: 90%;
     font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  button {
+    width: 80%;
+    max-width: 300px;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .letter-card {
     width: 90%;
+    padding: 20px;
+  }
+
+  .theme-toggle {
+    font-size: 1.5rem;
+  }
+
+  /* Reduce heart size on mobile */
+  .heart {
+    font-size: 18px;
+  }
+
+  /* Reduce sparkles */
+  .sparkle {
+    font-size: 14px;
   }
 }
+
 

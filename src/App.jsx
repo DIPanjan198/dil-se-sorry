@@ -29,19 +29,20 @@ function App() {
   }, []);
 
   // Runaway Button
-  const handleNo = () => {
+ const handleNo = () => {
   const button = document.querySelector(".no");
 
-  const maxX = window.innerWidth - 150;
-  const maxY = window.innerHeight - 100;
+  const maxX = window.innerWidth - button.offsetWidth - 20;
+  const maxY = window.innerHeight - button.offsetHeight - 20;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
-  button.style.position = "absolute";
+  button.style.position = "fixed";
   button.style.left = randomX + "px";
   button.style.top = randomY + "px";
 };
+
 
 
   // Music Toggle
@@ -59,7 +60,13 @@ function App() {
 
   return (
     <div className={darkMode ? "container dark" : "container"}>
-      {forgiven && <Confetti />}
+      {forgiven && (
+  <Confetti
+    width={window.innerWidth}
+    height={window.innerHeight}
+  />
+)}
+
 
       {/* Audio */}
       <audio ref={audioRef} src="/romantic-song.mp3.webm" loop />
