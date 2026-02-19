@@ -29,11 +29,20 @@ function App() {
   }, []);
 
   // Runaway Button
-  const handleNo = (e) => {
-    const x = Math.random() * 300 - 150;
-    const y = Math.random() * 300 - 150;
-    e.target.style.transform = `translate(${x}px, ${y}px)`;
-  };
+  const handleNo = () => {
+  const button = document.querySelector(".no");
+
+  const maxX = window.innerWidth - 150;
+  const maxY = window.innerHeight - 100;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  button.style.position = "absolute";
+  button.style.left = randomX + "px";
+  button.style.top = randomY + "px";
+};
+
 
   // Music Toggle
   const toggleMusic = () => {
@@ -105,7 +114,7 @@ function App() {
           Yes, I Forgive You 💕
         </button>
 
-        <button className="no romantic-btn" onMouseEnter={handleNo}>
+        <button className="no" onMouseEnter={handleNo}>
           No 😝
         </button>
       </div>
