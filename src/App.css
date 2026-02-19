@@ -88,6 +88,9 @@ button {
 .no {
   background: white;
   color: #ff4d6d;
+   font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 
 .no:hover {
@@ -239,6 +242,14 @@ button {
 .letter-card h2 {
   color: #ff4d6d;
 }
+.no:focus {
+  outline: none;
+}
+
+.no {
+  transition: left 0.2s ease, top 0.2s ease;
+}
+
 
 /* ================= RESPONSIVE ================= */
 

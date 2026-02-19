@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   // Runaway Button
- const handleNo = () => {
+  const handleNo = () => {
   const button = document.querySelector(".no");
 
   const maxX = window.innerWidth - button.offsetWidth - 20;
@@ -42,9 +42,6 @@ function App() {
   button.style.left = randomX + "px";
   button.style.top = randomY + "px";
 };
-
-
-
   // Music Toggle
   const toggleMusic = () => {
     if (!audioRef.current) return;
@@ -121,9 +118,16 @@ function App() {
           Yes, I Forgive You 💕
         </button>
 
-        <button className="no" onMouseEnter={handleNo}>
-          No 😝
-        </button>
+        <button
+  className="no"
+  onClick={(e) => {
+    handleNo();
+    e.target.blur();   // remove focus (important for Android)
+  }}
+>
+  No 😝
+</button>
+  
       </div>
 
       {/* Love Letter */}
